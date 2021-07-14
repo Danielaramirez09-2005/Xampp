@@ -2,7 +2,7 @@
     class Database {
 
         public $db; //controladores db
-        private static $dns = "mysql:host=localhost;dbname=colegio"; //url de la base de datos
+        private static $dns = "mysql:host=localhost;dbname=colegioispa"; //url de la base de datos
         private static $user = "root"; //usuario de la conexión
         private static $pass = ""; //contraseña del usuario
         private static $instance; //instrancia de la conexion
@@ -83,7 +83,7 @@
                     )
                 );
 
-                return '4';
+                return $query;
 
             } catch(PDOException $error) {
                 return '5';

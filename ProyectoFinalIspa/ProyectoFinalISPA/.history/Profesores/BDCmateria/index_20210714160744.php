@@ -62,7 +62,7 @@
                                 echo '<div class="alert alert-danger" role="alert">Ya existe la materia que intenta registrar</div>';
                             }
                             if ($_GET['confirm'] === "4"){
-                                echo '<div class="alert alert-success" role="alert">Materia actualizada</div>';
+                                echo '<div class="alert alert-danger" role="alert">Materia actualizada</div>';
                             }
                             if ($_GET['confirm'] === "5"){
                                 echo '<div class="alert alert-danger" role="alert">Materia no actualizada</div>';
@@ -73,7 +73,7 @@
                         <h5>Creación de Materias</h5>
                         <div class="btn btn-primary btn-sm">
                             <a class="list-group-item list-group-item-action active " id="list-regresar-list"
-                                href="../LMaterias.php">Regresar</a>
+                                href="../LMaterias.html">Regresar</a>
                         </div>
                     </div>
                 </div>

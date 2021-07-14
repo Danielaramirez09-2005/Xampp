@@ -83,7 +83,7 @@
                     )
                 );
 
-                return '4';
+                return $query;
 
             } catch(PDOException $error) {
                 return '5';

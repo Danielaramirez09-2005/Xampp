@@ -1,3 +1,20 @@
+<?php
+include_once("./DBconnect.php");
+
+//id = id que llega del get
+$id = $_GET['id'];
+
+$conexion = new Database;
+$materia = $conexion->editMateria($id);
+
+$idMateria = "";
+$nomMateria = "";
+foreach ($materia->fetchAll(PDO::FETCH_OBJ) as $columnaMateria) {
+    $idMateria = $columnaMateria->id;
+    $nomMateria = $columnaMateria->nombre;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,19 +78,13 @@
                             if ($_GET['confirm'] === "3"){
                                 echo '<div class="alert alert-danger" role="alert">Ya existe la materia que intenta registrar</div>';
                             }
-                            if ($_GET['confirm'] === "4"){
-                                echo '<div class="alert alert-success" role="alert">Materia actualizada</div>';
-                            }
-                            if ($_GET['confirm'] === "5"){
-                                echo '<div class="alert alert-danger" role="alert">Materia no actualizada</div>';
-                            }
                         }
                     ?>   
                     <div class="d-flex justify-content-between align-items-center">
                         <h5>Creación de Materias</h5>
                         <div class="btn btn-primary btn-sm">
                             <a class="list-group-item list-group-item-action active " id="list-regresar-list"
-                                href="../LMaterias.php">Regresar</a>
+                                href="../LMaterias.html">Regresar</a>
                         </div>
                     </div>
                 </div>
@@ -84,10 +95,12 @@
 
                         <form action="./config/insertar.php" method="POST">
                             <div class="form-group">
+                                <label for="id">Id</label>
+                                <input value="<?= $idMateria?>" type="text" class="form-control" id="nombre" name="nombre" aria-describedby="id">
                                 <label for="id">Nombre</label>
-                                <input required type="text" class="form-control" id="nombre" name="nombre">
+                                <input value="<?= $nomMateria?>" class="form-control" name="nombres" id="userId" aria-describedby="idHelp" require>
                               </div>
-                              <button type="submit" class="btn btn-primary">Crear</button>
+                              <button type="submit" class="btn btn-primary">Actualizar</button>
                             
                         </form>
                         </div>

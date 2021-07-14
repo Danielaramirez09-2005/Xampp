@@ -10,5 +10,5 @@
         $confirm = $conexion->updateMateria($id, $nombre);
     }
 
-    header("Location: ../index.php?confirm=".$confirm)
+    //header("Location: ../index.php?confirm=".$confirm)
 ?>

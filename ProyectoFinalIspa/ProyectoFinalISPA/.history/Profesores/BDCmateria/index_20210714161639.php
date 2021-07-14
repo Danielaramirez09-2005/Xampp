@@ -62,7 +62,7 @@
                                 echo '<div class="alert alert-danger" role="alert">Ya existe la materia que intenta registrar</div>';
                             }
                             if ($_GET['confirm'] === "4"){
-                                echo '<div class="alert alert-success" role="alert">Materia actualizada</div>';
+                                echo '<div class="alert alert-danger" role="alert">Materia actualizada</div>';
                             }
                             if ($_GET['confirm'] === "5"){
                                 echo '<div class="alert alert-danger" role="alert">Materia no actualizada</div>';
