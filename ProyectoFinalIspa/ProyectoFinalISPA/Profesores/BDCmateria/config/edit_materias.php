@@ -1,3 +1,20 @@
+<?php
+include_once("./DBconnect.php");
+
+//id = id que llega del get
+$id = $_GET['id'];
+
+$conexion = new Database;
+$materia = $conexion->editMateria($id);
+
+$idMateria = "";
+$nomMateria = "";
+foreach ($materia->fetchAll(PDO::FETCH_OBJ) as $columnaMateria) {
+    $idMateria = $columnaMateria->id;
+    $nomMateria = $columnaMateria->nombre;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +27,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <title>Creación de materia</title>
 </head>
 
@@ -21,15 +38,15 @@
     <nav class="navbar navbar-light bg-light">
 
         <a class="navbar-brand" href="#">
-            <img src="./img/Colegio.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+            <img src="../img/Colegio.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
         </a>
         <div class="dropdown">
             <a class="btn btn-ligth dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">Estudiantes</a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="./index7.html">Ver estudiantes</a>
-                <a class="dropdown-item" href="./LMaterias.html">Materias</a>
-                <a class="dropdown-item" href="./DDisponibles.html">Archivos</a>
+                <a class="dropdown-item" href="../index7.html">Ver estudiantes</a>
+                <a class="dropdown-item" href="../LMaterias.html">Materias</a>
+                <a class="dropdown-item" href="../DDisponibles.html">Archivos</a>
             </div>
         </div>
         <div class="dropdown ml-auto">
@@ -59,7 +76,7 @@
                                 echo '<div class="alert alert-danger" role="alert">Uno o mas campos estan vacios</div>';
                             }
                             if ($_GET['confirm'] === "3"){
-                                echo '<div class="alert alert-danger" role="alert">Ya existe el usuario que intenta registrar</div>';
+                                echo '<div class="alert alert-danger" role="alert">Ya existe la materia que intenta registrar</div>';
                             }
                         }
                     ?>   
@@ -67,7 +84,7 @@
                         <h5>Creación de Materias</h5>
                         <div class="btn btn-primary btn-sm">
                             <a class="list-group-item list-group-item-action active " id="list-regresar-list"
-                                href="./LMaterias.html">Regresar</a>
+                                href="../LMaterias.html">Regresar</a>
                         </div>
                     </div>
                 </div>
@@ -78,10 +95,12 @@
 
                         <form action="./config/insertar.php" method="POST">
                             <div class="form-group">
+                                <label for="id">Id</label>
+                                <input value="<?= $idMateria?>" type="text" class="form-control" id="nombre" name="nombre" aria-describedby="id">
                                 <label for="id">Nombre</label>
-                                <input required type="text" class="form-control" id="nombre" name="nombre">
+                                <input value="<?= $nomMateria?>" class="form-control" name="nombres" id="userId" aria-describedby="idHelp" require>
                               </div>
-                              <button type="submit" class="btn btn-primary">Crear</button>
+                              <button type="submit" class="btn btn-primary">Actualizar</button>
                             
                         </form>
                         </div>

@@ -1,0 +1,10 @@
+.color-background{
+    background-color:rgb(199, 73, 100);
+}
+.bg-white{
+    background-color: rgb(199, 126, 126);
+    border: solid 0.1rem black;
+    border-radius: 0.4rem;
+    /*box-shadow: <posicion en y> <posicion en x> <nivel de distorcion> <color>;*/
+    box-shadow: -11px 11px 10px rgb(0, 0, 0);
+}

@@ -59,7 +59,38 @@
         }
 
 
+        public function editMateria($id){
+            $conexion=Database::getInstance();
+            $query=$conexion->db->prepare('SELECT * from materias WHERE id=:id');
+            $query->execute(
+                array(
+                    ':id'=>$id
+                )
+            );
+            return $query; 
+        }
 
+        public function updateMateria($id, $nombre){
+
+            try {
+
+                $conexion=Database::getInstance();
+                $query=$conexion->db->prepare('UPDATE materias SET nombre=:nombre WHERE id=:id');
+                $query->execute(
+                    array(
+                    ':nombre'=>$nombre,
+                    ':id'=>$id  
+                    )
+                );
+
+                return $query;
+
+            } catch(PDOException $error) {
+                return '5';
+            }
+
+
+        }
         
     }
 ?>

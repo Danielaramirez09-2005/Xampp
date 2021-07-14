@@ -23,22 +23,6 @@
         <div class="col-md-5 border p-5 my-5 bg-white">
             <div class="card">
                 <div class="card-header">
-                    <?php
-                        if (isset($_GET['confirm'])){
-                            if ($_GET['confirm'] === "0"){
-                                echo '<div class="alert alert-danger" role="alert">Dato no ingresado</div>';
-                            }
-                            if ($_GET['confirm'] === "1"){
-                                echo '<div class="alert alert-success" role="alert">El registro ha sido exitoso</div>';
-                            }
-                            if ($_GET['confirm'] === "2"){
-                                echo '<div class="alert alert-danger" role="alert">Uno o mas campos estan vacios</div>';
-                            }
-                            if ($_GET['confirm'] === "3"){
-                                echo '<div class="alert alert-danger" role="alert">Ya existe el usuario que intenta registrar</div>';
-                            }
-                        }
-                    ?>   
                     <div class="list-group list-group-horizontal" id="list-tab" role="tablist">
                         <a class="list-group-item list-group-item-action active" id="list-login-list" data-toggle="list" href="#list-login" role="tab" aria-controls="login">Login</a>
                         <a class="list-group-item list-group-item-action" id="list-register-list" data-toggle="list" href="#list-register" role="tab" aria-controls="register">Register</a>
@@ -67,34 +51,34 @@
 
                         
                         <div class="tab-pane fade" id="list-register" role="tabpanel" aria-labelledby="list-register-list">
-                          <form action="./config/insertar.php" method="POST">
+                          <form>
                             <div class="form-group">
                               <label for="userId">Identificación</label>
-                              <input required type="text" class="form-control" id="userId" name="userId">
+                              <input required type="text" class="form-control" id="userId">
                             </div>
                             <div class="form-group">
                               <label for="user">Nombres</label>
-                              <input required type="text" class="form-control" id="user" name="user">
+                              <input required type="text" class="form-control" id="user">
                             </div>
                             <div class="form-group">
                               <label for="userAp">Apellidos</label>
-                              <input required type="text" class="form-control" id="userAp" name="userAp">
+                              <input required type="text" class="form-control" id="userAp">
                             </div>
                             <div class="form-group">
                               <label for="email">Correo electrónico</label>
-                              <input required type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                              <input required type="email" class="form-control" id="email" aria-describedby="emailHelp">
                               <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más</small>
                             </div>
                             <div class="form-group">
                               <label for="passwd">Contraseña</label>
-                              <input required type="password" class="form-control" id="passwd" name="passwd">
+                              <input required type="password" class="form-control" id="passwd">
                             </div>
                             <div class="form-group">
                               <label for="passwdConfirm">Confirmar contraseña</label>
-                              <input required type="password" class="form-control" id="passwdConfirm" name="passwdConfirm">
+                              <input required type="password" class="form-control" id="passwdConfirm">
                             </div>
-                            <button type="submit" class="btn btn-primary">Registrar</button>
                         </form>
+                        <button type="submit" class="btn btn-primary">Registrar</button>
                         </div>
                     </div>
                 </div>

@@ -11,7 +11,7 @@
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
 
   <!-- My styles-->
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="../styles.css" />
 
   <title>Creación de estudiante</title>
 </head>
@@ -23,15 +23,15 @@
   <nav class="navbar navbar-light bg-light">
 
     <a class="navbar-brand" href="#">
-      <img src="./img/Colegio.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+      <img src="../img/Colegio.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
     </a>
     <div class="dropdown">
       <a class="btn btn-ligth dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">Estudiantes</a>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="./index7.html">Ver estudiantes</a>
-        <a class="dropdown-item" href="./LMaterias.html">Materias</a>
-        <a class="dropdown-item" href="./DDisponibles.html">Archivos</a>
+        <a class="dropdown-item" href="../index7.html">Ver estudiantes</a>
+        <a class="dropdown-item" href="../LMaterias.html">Materias</a>
+        <a class="dropdown-item" href="../DDisponibles.html">Archivos</a>
       </div>
     </div>
     <div class="dropdown ml-auto">
@@ -69,7 +69,7 @@
             <h3>Creación de estudiantes</h3>
             <div class="btn btn-sm">
               <a class="list-group-item list-group-item-action active " id="list-regresar-list" 
-                href="./index7.html">Regresar</a>
+                href="../index7.html">Regresar</a>
             </div>
           </div>
         </div>

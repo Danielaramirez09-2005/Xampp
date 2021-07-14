@@ -45,11 +45,11 @@ $resultado = $conexion->datosEstudiantes();
         <?php
         foreach($resultado as $fila){
             echo "<tr>
-                <td>".$fila['userId']."</td>
-                <td>".$fila['user']."</td>
-                <td>".$fila['userA']."</td>
+                <td>".$fila['identificacion']."</td>
+                <td>".$fila['nombres']."</td>
+                <td>".$fila['apellidos']."</td>
                 <td>".$fila['email']."</td>
-                <td>".$fila['number']."</td>
+                <td>".$fila['telefono']."</td>
             </tr>";
         }
     ?>
